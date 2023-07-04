@@ -33,8 +33,8 @@ def remove_chastisements(schoolkid_name):
     except MultipleObjectsReturned:
         print("По запросу найдено несколько учеников")
         return
-    marks = Chastisement.objects.filter(schoolkid=schoolkid)
-    marks.delete()
+    chastisements = Chastisement.objects.filter(schoolkid=schoolkid)
+    chastisements.delete()
 
 
 def create_commendation(schoolkid_name, subject):
