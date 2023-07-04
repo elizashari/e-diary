@@ -10,7 +10,7 @@ import random
 
 def fix_marks(schoolkid_name):
     try:
-        schoolkid = Schoolkid.objects.filter(full_name__contains=schoolkid_name)[0]
+        schoolkid = Schoolkid.objects.get(full_name__contains=schoolkid_name)
     except ObjectDoesNotExist:
         print("Ученик не найден")
         return
@@ -25,7 +25,7 @@ def fix_marks(schoolkid_name):
 
 def remove_chastisements(schoolkid_name):
     try:
-        schoolkid = Schoolkid.objects.filter(full_name__contains = schoolkid_name)[0]
+        schoolkid = Schoolkid.objects.get(full_name__contains = schoolkid_name)
     except ObjectDoesNotExist:
         print("По запросу ученик не найден")
         return
@@ -38,7 +38,7 @@ def remove_chastisements(schoolkid_name):
 
 def create_commendation(schoolkid_name, subject):
     try:
-        schoolkid = Schoolkid.objects.filter(full_name__contains = schoolkid_name)[0]
+        schoolkid = Schoolkid.objects.get(full_name__contains = schoolkid_name)
     except ObjectDoesNotExist:
         print("По запросу ученик не найден")
         return
