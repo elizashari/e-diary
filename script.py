@@ -8,7 +8,6 @@ from datacenter.models import Commendation
 import random
 
 
-
 def fix_marks(schoolkid_name):
     try:
         schoolkid = Schoolkid.objects.filter(full_name__contains=schoolkid_name)[0]
